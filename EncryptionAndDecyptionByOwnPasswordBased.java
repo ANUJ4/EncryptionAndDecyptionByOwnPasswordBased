@@ -59,7 +59,7 @@ public class EncryptionAndDecyptionByOwnPasswordBased {
 		return null;
 	}
 
-	private String DecryptionWithAKT(String dec) {
+	public String DecryptionWithAKT(String dec) {
 		try {
 
 			return decrypt(this.key, initVector, dec);
@@ -70,7 +70,7 @@ public class EncryptionAndDecyptionByOwnPasswordBased {
 		return null;
 	}
 
-	private String EncryptionWithAKT(String enc) {
+	public String EncryptionWithAKT(String enc) {
 		try {
 
 			return encrypt(this.key, initVector, enc);
