@@ -80,4 +80,14 @@ public class EncryptionAndDecyptionByOwnPasswordBased {
 		}
 		return null;
 	}
+	
+	public boolean isEncrypted(String enc) {
+		try {
+			return Base64.isBase64(enc);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 }
