@@ -1,5 +1,7 @@
 package com.akt.security.use;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
@@ -80,14 +82,15 @@ public class EncryptionAndDecyptionByOwnPasswordBased {
 		}
 		return null;
 	}
-	
-	public boolean isEncrypted(String enc) {
-		try {
-			return Base64.isBase64(enc);
 
-		} catch (Exception e) {
-			e.printStackTrace();
+	public boolean isEncrypted(String string) {
+		String pattern = "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$";
+		Pattern r = Pattern.compile(pattern);
+		Matcher m = r.matcher(string);
+		if (m.find()) {
+			return true;
+		} else {
+			return false;
 		}
-		return false;
 	}
 }
