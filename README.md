@@ -3,6 +3,8 @@ main class EncryptionAndDecyptionByOwnPasswordBased create object that takes 16 
 
 # Example 
 
+
+```java
 public static void main(String[] args) {
 		EncryptionAndDecyptionByOwnPasswordBased s = new EncryptionAndDecyptionByOwnPasswordBased("AJAJTYEFERTDGHSD");
 		String hel = s.EncryptionWithAKT("a constructor with arguments or no-argument then compiler does not create default "
@@ -12,3 +14,6 @@ public static void main(String[] args) {
 		String dec = s.DecryptionWithAKT(hel);
 		System.out.println("dec: " + dec);
 	}
+
+
+```
