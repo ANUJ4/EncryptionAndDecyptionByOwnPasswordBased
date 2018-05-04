@@ -1,5 +1,6 @@
 package com.akt.security.use;
 
+import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.crypto.Cipher;
@@ -12,17 +13,23 @@ import javax.crypto.spec.SecretKeySpec;
  * @category Security
  * @param EncryptionAndDecyptionByOwnPasswordBased
  *            Constructor Takes only 16bit length string as a key. Key must me
- *            same for encrypt and decrypt
+ *            same for encrypt and decrypt.
  * @param Method
  *            EncryptionWithAKT takes string to encrypt, Method
- *            DecryptionWithAKT takes encrypted string
+ *            DecryptionWithAKT takes encrypted string, Method isEncrypted takes
+ *            encrypted string.
  * @return Method EncryptionWithAKT return String that is encoded, Method
- *         DecryptionWithAKT return String that is decoded means original String
+ *         DecryptionWithAKT return String that is decoded means original
+ *         String, isEncrypted return boolean value.
  */
 
-public class EncryptionAndDecyptionByOwnPasswordBased {
+public class EncryptionAndDecyptionByOwnPasswordBased implements Serializable{
+	private static final long serialVersionUID = 1L;
 	String key = "AKTTEMPVAL6723IU";
 	private static String initVector = "AKTENCRTPYIUOWER";
+	public EncryptionAndDecyptionByOwnPasswordBased(){
+		this.key = "AKTTEMSPVL6923IU";	
+	}
 
 	public EncryptionAndDecyptionByOwnPasswordBased(String pwd) {
 		if (pwd == null || pwd.equals("") || pwd.length() != 16) {
